@@ -1,20 +1,23 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
-
+import React from 'react'
 import Box from '@material-ui/core/Box'
 
 import { makeStyles } from '@material-ui/core/styles'
 import Zoom from '@material-ui/core/Zoom'
 import Typography from '@material-ui/core/Typography'
 import Divider from '@material-ui/core/Divider'
-import Logo from '../Logo/LogoWhite'
+
+import ContactIcons from '../../components/ContactIcons'
+
+//import Logo from "../../Logo/LogoWhite";
 
 const useStyles = makeStyles({
 	contentContainer: {
 		alignItems: 'center',
+		backgroundColor: '#171717',
 		width: '100%',
 		display: 'flex',
 		flexDirection: 'column',
+		minHeight: '85vh',
 		justifyContent: 'center',
 	},
 	typo: {
@@ -30,27 +33,24 @@ const useStyles = makeStyles({
 		borderStyle: 'solid',
 	},
 })
-
-export default function Home() {
+const DesktopHome = () => {
 	const classes = useStyles()
 	return (
-		<div className={styles.container}>
-			<Head>
-				<title>Create Next App</title>
-				<link rel='icon' href='/favicon.ico' />
-			</Head>
-
-			<main className={styles.main}>
-				<Zoom in={true}>
-					<Box className={classes.contentContainer}>
-						<Logo width='45vw' />
-						<Divider className={classes.divider} />
-						<Typography align='center' className={classes.typo}>
-							Regnskapstjenester for stotre og melomstore bedrifter
-						</Typography>
+		<>
+			<Zoom in={true}>
+				<Box className={classes.contentContainer}>
+					LOGO{/* <Logo width="45vw" /> */}
+					<Divider className={classes.divider} />
+					<Typography align='center' className={classes.typo}>
+						Regnskapstjenester for stotre og melomstore bedrifter
+					</Typography>
+					<Box>
+						<ContactIcons long />
 					</Box>
-				</Zoom>
-			</main>
-		</div>
+				</Box>
+			</Zoom>
+		</>
 	)
 }
+
+export default DesktopHome
