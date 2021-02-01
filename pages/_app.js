@@ -6,6 +6,7 @@ import Head from 'next/head'
 import { ThemeProvider } from '@material-ui/core/styles'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import theme from '../theme'
+import NavBtn from '../components/CoolBtnLink'
 
 import Logo from '../Logo/LogoWhite'
 
@@ -33,21 +34,33 @@ function MyApp({ Component, pageProps }) {
 				>
 					<Link href='/'>
 						<a>
-							<Logo width='12vw' />
+							<Logo width='32vw' />
 						</a>
 					</Link>
 				</div>
 				<Component {...pageProps} />
 				<nav
 					style={{
-						height: '8vh',
+						// height: '8vh',
 						backgroundColor: 'transparent',
 						position: 'absolute',
 						bottom: 0,
 						width: '100vw',
+						display: 'flex',
+						justifyContent: 'center',
+						backgroundColor: 'transparent',
+						position: 'absolute',
+						bottom: '0px',
+						width: '100vw',
+						display: 'flex',
+						justifyContent: 'center',
+						padding: '8px 4px',
+						margin: '8px 0px',
 					}}
 				>
-					<p>navigaiton</p>
+					<NavBtn btnText='Om Oss' link='tjenester' />
+					<NavBtn btnText='Tjenester' link='tjenester' />
+					<NavBtn btnText='Kontakt' link='tjenester' />
 				</nav>
 			</ThemeProvider>
 		</>

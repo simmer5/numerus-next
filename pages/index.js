@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Link from 'next/link'
 import styles from '../styles/Home.module.css'
 
 import Box from '@material-ui/core/Box'
@@ -8,7 +9,6 @@ import Zoom from '@material-ui/core/Zoom'
 import Typography from '@material-ui/core/Typography'
 import Divider from '@material-ui/core/Divider'
 import Logo from '../Logo/LogoWhite'
-import Btn from '../components/CoolBtn'
 
 const useStyles = makeStyles({
 	contentContainer: {
@@ -49,7 +49,6 @@ export default function Home() {
 						<Typography align='center' className={classes.typo}>
 							Regnskapstjenester for stotre og melomstore bedrifter
 						</Typography>
-						<Btn />
 					</Box>
 				</Zoom>
 			</main>
