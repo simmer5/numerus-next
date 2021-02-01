@@ -45,7 +45,7 @@ export default function Home() {
 				<Zoom in={true}>
 					<Box className={classes.contentContainer}>
 						<Logo width='45vw' />
-						{/* <Divider className={classes.divider} /> */}
+						<Divider className={classes.divider} />
 						<Typography align='center' className={classes.typo}>
 							Regnskapstjenester for stotre og melomstore bedrifter
 						</Typography>
