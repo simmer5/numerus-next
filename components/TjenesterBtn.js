@@ -32,7 +32,7 @@ const useStyles = makeStyles({
 		cursor: 'pointer',
 	},
 })
-const TjenesterBtn = () => {
+const TjenesterBtn = ({ title, tjenesterTitle, description }) => {
 	const classes = useStyles()
 	const [open, setOpen] = useState(false)
 
@@ -46,13 +46,13 @@ const TjenesterBtn = () => {
 	return (
 		<>
 			<div className={styles.btn} onClick={handleOpen}>
-				<span className={styles.noselect}>btnText</span>
+				<span className={styles.noselect}>{title}</span>
 			</div>
 			<Modal className={classes.modal} open={open} onClose={handleClose}>
 				<Fade in={open}>
 					<div className={classes.paper}>
-						<div className={classes.titleContainer}>Title</div>
-						<p>Aprasymas</p>
+						<div className={classes.titleContainer}>{tjenesterTitle}</div>
+						<p>{description}</p>
 						<CloseIcon className={classes.closeIcon} onClick={handleClose} />
 					</div>
 				</Fade>

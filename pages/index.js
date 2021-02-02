@@ -9,6 +9,7 @@ import Zoom from '@material-ui/core/Zoom'
 import Typography from '@material-ui/core/Typography'
 import Divider from '@material-ui/core/Divider'
 import Logo from '../Logo/LogoWhite'
+import CoolDivider from '../components/CoolDivider'
 
 const useStyles = makeStyles({
 	contentContainer: {
@@ -46,6 +47,8 @@ export default function Home() {
 					<Box className={classes.contentContainer}>
 						<Logo width='45vw' />
 						<Divider className={classes.divider} />
+						<CoolDivider />
+
 						<Typography align='center' className={classes.typo}>
 							Regnskapstjenester for stotre og melomstore bedrifter
 						</Typography>

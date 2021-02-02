@@ -9,6 +9,7 @@ import theme from '../theme'
 import NavBtn from '../components/CoolBtnLink'
 
 import Logo from '../Logo/LogoWhite'
+import CoolDivider from '../components/CoolDivider'
 
 function MyApp({ Component, pageProps }) {
 	React.useEffect(() => {
@@ -39,6 +40,7 @@ function MyApp({ Component, pageProps }) {
 					</Link>
 				</div>
 				<Component {...pageProps} />
+
 				<nav
 					style={{
 						// height: '8vh',
@@ -58,6 +60,7 @@ function MyApp({ Component, pageProps }) {
 						margin: '8px 0px',
 					}}
 				>
+					<CoolDivider />
 					<NavBtn btnText='Om Oss' link='tjenester' />
 					<NavBtn btnText='Tjenester' link='tjenester' />
 					<NavBtn btnText='Kontakt' link='tjenester' />
