@@ -1,142 +1,105 @@
-import React, { useState } from "react";
-import CallIcon from "@material-ui/icons/Call";
-import MailIcon from "@material-ui/icons/Mail";
-import LocationOnIcon from "@material-ui/icons/LocationOn";
-import Box from "@material-ui/core/Box";
-import { makeStyles } from "@material-ui/core/styles";
-import Popover from "@material-ui/core/Popover";
+import React, { useState } from 'react'
+import CallIcon from '@material-ui/icons/Call'
+import MailIcon from '@material-ui/icons/Mail'
+import LocationOnIcon from '@material-ui/icons/LocationOn'
+import Box from '@material-ui/core/Box'
+import { makeStyles } from '@material-ui/core/styles'
+import Snackbar from '@material-ui/core/Snackbar'
+import IconButton from '@material-ui/core/IconButton'
+import CloseIcon from '@material-ui/icons/Close'
+import Button from '@material-ui/core/Button'
+
+import Link from 'next/link'
 
 const useStyles = makeStyles(
-  {
-    root: { top: "210px" },
-    paper: {
-      border: "2px solid #00A6FF",
-      backgroundColor: "#171717",
-      marginTop: "1rem",
-    },
+	{
+		root: {
+			backgroundColor: '#252732',
+			color: '#00a6ff',
+			border: '1px solid #00a6ff',
+		},
+		iFrame: {
+			color: '#00a6ff',
+			border: '2px solid white',
+			margin: '1rem',
+			padding: '1rem',
+			display: 'flex',
+			transition: 'all 300ms ease 0s',
+			'&:hover': {
+				borderStyle: 'solid',
+				borderImage:
+					'linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(50,50,231,1) 57%, rgba(0,212,255,1) 100%) 1',
+				transform: 'scale(1.01)',
+				cursor: 'pointer',
+			},
+		},
+	},
+	{ name: 'MuiSnackbarContent' }
+)
+const ContactIcons = () => {
+	const classes = useStyles()
+	const [open, setOpen] = React.useState(false)
 
-    iContainer: { display: "flex", flexDirection: "row" },
-    iContainerShort: {
-      display: "flex",
-      width: "100%",
-      height: "100%",
-    },
-    iFrame: {
-      background: "none",
-      color: "#00a6ff",
-      border: "4px solid white",
-      margin: "1rem",
-      padding: "1rem",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      // width: "15vw",
-      transition: "all 300ms ease 0s",
-      "&:hover": {
-        borderStyle: "solid",
-        borderImage:
-          "linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(50,50,231,1) 57%, rgba(0,212,255,1) 100%) 1",
-        transform: "scale(1.01)",
-        cursor: "pointer",
-      },
-    },
-    popTitle: {
-      padding: "1rem",
-      color: "#00a6ff",
-    },
-  },
-  { name: "MuiPopover" }
-);
-const ContactIcons = ({
-  long,
-  short,
-  anchorVertical,
-  anchorHorizontal,
-  transformVertical,
-  transformHorizontal,
-}) => {
-  const classes = useStyles();
+	const handleClick = text => {
+		setOpen(true)
+		navigator.clipboard.writeText(text)
+	}
 
-  const [value, setValue] = useState("");
-  const [anchorEl, setAnchorEl] = useState(null);
+	const handleClose = (event, reason) => {
+		if (reason === 'clickaway') {
+			return
+		}
 
-  const handleOpen = (e) => {
-    setAnchorEl(e.currentTarget);
-    setValue(e.currentTarget.value);
-  };
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
-  const open = Boolean(anchorEl);
+		setOpen(false)
+	}
 
-  return (
-    <>
-      {long && (
-        <Box className={classes.iContainer}>
-          <Box className={classes.iFrame}>
-            <CallIcon />
-            <Box className={classes.iText}> +47 401 72372</Box>
-          </Box>
-          <Box className={classes.iFrame}>
-            <MailIcon />
-            <Box className={classes.iText}> post@numerusfinans.no</Box>
-          </Box>
-          <Box className={classes.iFrame}>
-            <LocationOnIcon />
-            <Box className={classes.iText}>Regnbueveien 2, 1405 Langhus</Box>
-          </Box>
-        </Box>
-      )}
-      {/* ========== Short version========== */}
-      {short && (
-        <>
-          <Box className={classes.iContainerShort}>
-            <Box
-              component="button"
-              value="+47 401 72372"
-              className={classes.iFrame}
-              onClick={handleOpen}
-            >
-              <CallIcon />
-            </Box>
-            <Box
-              component="button"
-              className={classes.iFrame}
-              onClick={handleOpen}
-              value="post@numerusfinans.no"
-            >
-              <MailIcon />
-            </Box>
-            <Box
-              component="button"
-              className={classes.iFrame}
-              onClick={handleOpen}
-              value="Regnbueveien 2, 1405 Langhus"
-            >
-              <LocationOnIcon />
-            </Box>
+	return (
+		<Box flexWrap='wrap' display='flex' justifyContent='center'>
+			<Box className={classes.iFrame}>
+				<CallIcon />
+				<Box onClick={() => handleClick('+47 401 72372')}>+47 401 72372</Box>
+			</Box>
+			<Box
+				className={classes.iFrame}
+				onClick={() => handleClick('post@numerusfinans.no')}
+			>
+				<MailIcon />
+				<Box> post@numerusfinans.no</Box>
+			</Box>
+			<Box className={classes.iFrame}>
+				<LocationOnIcon />
 
-            <Popover
-              disablePortal={true}
-              open={open}
-              anchorEl={anchorEl}
-              onClose={handleClose}
-              anchorOrigin={{
-                vertical: `${anchorVertical}`,
-                horizontal: `${anchorHorizontal}`,
-              }}
-              transformOrigin={{
-                vertical: `${transformVertical}`,
-                horizontal: `${transformHorizontal}`,
-              }}
-            >
-              <div className={classes.popTitle}>{value}</div>
-            </Popover>
-          </Box>
-        </>
-      )}
-    </>
-  );
-};
+				<Box>
+					<Link href='https://www.google.com/maps/place/Regnbueveien+2,+1405+Langhus/@59.771718,10.8465043,17z/data=!3m1!4b1!4m5!3m4!1s0x464167f32ddd60f3:0x36bc43db8b60e8dd!8m2!3d59.771718!4d10.848693'>
+						<a target='_blank'>Regnbueveien 2, 1405 Langhus</a>
+					</Link>
+				</Box>
+			</Box>
+			<Snackbar
+				className={classes.snackbar}
+				anchorOrigin={{
+					vertical: 'bottom',
+					horizontal: 'center',
+				}}
+				open={open}
+				autoHideDuration={2000}
+				onClose={handleClose}
+				message='Teksten ble kopiert...'
+				action={
+					<>
+						<IconButton
+							size='small'
+							aria-label='close'
+							color='inherit'
+							onClick={handleClose}
+						>
+							<CloseIcon fontSize='small' />
+						</IconButton>
+					</>
+				}
+			/>
+		</Box>
+	)
+}
 
-export default ContactIcons;
+export default ContactIcons

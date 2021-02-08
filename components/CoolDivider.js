@@ -4,10 +4,8 @@ const CoolDivider = () => {
 	return (
 		<div
 			style={{
-				position: 'relative',
-				bottom: '1px',
 				height: '2px',
-				width: '80vw',
+				// width: '80vw',
 				marginRight: '10px',
 				marginLeft: '10px',
 				backgroundImage:

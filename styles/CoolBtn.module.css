@@ -2,7 +2,7 @@
 	margin: 2px 8px;
 }
 .btn {
-	width: 20vw;
+	min-width: 20vw;
 	height: 2.3rem;
 	border: 2px solid rgb(37, 77, 255);
 	font-size: 0.7rem;
@@ -26,12 +26,12 @@
 }
 
 .btn::before {
-	width: 16vw;
+	min-width: 16vw;
 	height: 2.3rem;
 }
 
 .btn::after {
-	width: 20vw;
+	min-width: 20vw;
 	height: 1.3rem;
 }
 
@@ -40,7 +40,7 @@
 } */
 
 .btn:hover::before {
-	width: 0px;
+	min-width: 0px;
 	background: rgb(0, 0, 0);
 }
 

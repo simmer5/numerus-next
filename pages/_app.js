@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import '../styles/globals.css'
 import Link from 'next/link'
 import Head from 'next/head'
@@ -12,17 +12,18 @@ import Logo from '../Logo/LogoWhite'
 import CoolDivider from '../components/CoolDivider'
 
 function MyApp({ Component, pageProps }) {
-	React.useEffect(() => {
-		// Remove the server-side injected CSS.
-		const jssStyles = document.querySelector('#jss-server-side')
-		if (jssStyles) {
-			jssStyles.parentElement.removeChild(jssStyles)
-		}
+	const [width, setWidth] = useState('')
+	const breakpoint = 720
+	useEffect(() => {
+		setWidth(window.innerWidth)
+		const handleWindowResize = () => setWidth(window.innerWidth)
+		window.addEventListener('resize', handleWindowResize)
+		return () => window.removeEventListener('resize', handleWindowResize)
 	}, [])
 	return (
 		<>
 			<Head>
-				<title>My page</title>
+				<title>Numerusfinans | Regnskapstjenester</title>
 				<meta
 					name='viewport'
 					content='minimum-scale=1, initial-scale=1, width=device-width'
@@ -35,36 +36,34 @@ function MyApp({ Component, pageProps }) {
 				>
 					<Link href='/'>
 						<a>
-							<Logo width='32vw' />
+							<Logo width={width > breakpoint ? '12vw' : '32vw'} />
 						</a>
 					</Link>
 				</div>
 				<Component {...pageProps} />
-
-				<nav
+				<div
 					style={{
-						// height: '8vh',
-						backgroundColor: 'transparent',
+						display: 'flex',
+						flexDirection: 'column',
 						position: 'absolute',
 						bottom: 0,
-						width: '100vw',
-						display: 'flex',
 						justifyContent: 'center',
-						backgroundColor: 'transparent',
-						position: 'absolute',
-						bottom: '0px',
 						width: '100vw',
-						display: 'flex',
-						justifyContent: 'center',
-						padding: '8px 4px',
-						margin: '8px 0px',
 					}}
 				>
 					<CoolDivider />
-					<NavBtn btnText='Om Oss' link='tjenester' />
-					<NavBtn btnText='Tjenester' link='tjenester' />
-					<NavBtn btnText='Kontakt' link='tjenester' />
-				</nav>
+					<nav
+						style={{
+							display: 'flex',
+							justifyContent: 'space-evenly',
+							margin: '8px 0px',
+							alignSelf: 'center',
+						}}
+					>
+						<NavBtn btnText='Tjenester' link='tjenester' />
+						<NavBtn btnText='Kontakt' link='kontakter' />
+					</nav>
+				</div>
 			</ThemeProvider>
 		</>
 	)
