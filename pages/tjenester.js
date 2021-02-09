@@ -27,47 +27,39 @@ const Tjenester = () => {
 						>
 							{/* Line 1 */}
 							<Grid item>
-								<div className={styles.tjenesterBtnWrapper}>
-									<TjenesterBtn
-										title='Regnskapsføring'
-										tjenesterTitle='Regnskapsføring'
-										description='Bokføring av bilag, avstemming av kontoer, rapportering til myndighetene. Vi kan ta oss av regnskapet fra A til Å, eller bare de delene du ikke ønsker å håndtere selv.'
-									/>
-								</div>
+								<TjenesterBtn
+									title='Regnskapsføring'
+									tjenesterTitle='Regnskapsføring'
+									description='Bokføring av bilag, avstemming av kontoer, rapportering til myndighetene. Vi kan ta oss av regnskapet fra A til Å, eller bare de delene du ikke ønsker å håndtere selv.'
+								/>
 							</Grid>
 
 							{/* Line 2 */}
 
 							<Grid item>
-								<div className={styles.tjenesterBtnWrapper}>
-									<TjenesterBtn
-										title='Lønn'
-										tjenesterTitle='Lønn'
-										description='Lonn. Vi kan ta oss av regnskapet fra A til Å, eller bare de delene du ikke ønsker å håndtere selv.'
-									/>
-								</div>
+								<TjenesterBtn
+									title='Lønn'
+									tjenesterTitle='Lønn'
+									description='Lonn. Vi kan ta oss av regnskapet fra A til Å, eller bare de delene du ikke ønsker å håndtere selv.'
+								/>
 							</Grid>
 							{/* Line 3 */}
 							<Grid item>
-								<div className={styles.tjenesterBtnWrapper}>
-									<TjenesterBtn
-										title='Årsoppgjør'
-										tjenesterTitle='Årsoppgjør'
-										description='Når vi tar tar årsoppgjøret for bedriften din, kan du være sikker på at alle lover og regler er fulgt og at myndighetene får den informasjonen de krever.'
-									/>
-								</div>
+								<TjenesterBtn
+									title='Årsoppgjør'
+									tjenesterTitle='Årsoppgjør'
+									description='Når vi tar tar årsoppgjøret for bedriften din, kan du være sikker på at alle lover og regler er fulgt og at myndighetene får den informasjonen de krever.'
+								/>
 							</Grid>
 
 							{/* Line 4 */}
 
 							<Grid item>
-								<div className={styles.tjenesterBtnWrapper}>
-									<TjenesterBtn
-										title='Rådgivning'
-										tjenesterTitle='Rådgivning'
-										description='Vi tilbyr gode råd hvis du trenger en sparringspartner for spørsmål om bedriftens lønnsomhet, likviditet, skattespørsmål, lån, investeringer og fusjoner.'
-									/>
-								</div>
+								<TjenesterBtn
+									title='Rådgivning'
+									tjenesterTitle='Rådgivning'
+									description='Vi tilbyr gode råd hvis du trenger en sparringspartner for spørsmål om bedriftens lønnsomhet, likviditet, skattespørsmål, lån, investeringer og fusjoner.'
+								/>
 							</Grid>
 						</Grid>
 					</Box>

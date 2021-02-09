@@ -1,11 +1,10 @@
 .main {
 	height: 100%;
 	display: flex;
-	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 }
 .tjenesterBtnWrapper {
-	display: flex;
-	justify-content: center;
+	/* display: flex;
+	justify-content: center; */
 }
