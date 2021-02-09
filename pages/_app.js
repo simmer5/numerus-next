@@ -37,7 +37,8 @@ function MyApp({ Component, pageProps }) {
 	return (
 		<div style={{ height: `${height}px`, backgroundColor: ' rgb(0, 0, 0)' }}>
 			<Head>
-				<title>Numerusfinans | Regnskapstjenester</title>
+				<title>Numerus finans | Regnskapstjenester</title>
+				<link rel='icon' href='/fav.ico' />
 				<meta
 					name='viewport'
 					content='minimum-scale=1, initial-scale=1, width=device-width'

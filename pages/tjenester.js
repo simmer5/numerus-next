@@ -10,10 +10,10 @@ import TjenesterBtn from '../components/TjenesterBtn'
 
 const Tjenester = () => {
 	return (
-		<div className={styles.container}>
+		<>
 			<Head>
 				<title>Tjenester | Numerus finans</title>
-				<link rel='icon' href='/favicon.ico' />
+				<link rel='icon' href='/fav.ico' />
 			</Head>
 			<main className={styles.main}>
 				<Zoom in={true}>
@@ -73,7 +73,7 @@ const Tjenester = () => {
 					</Box>
 				</Zoom>
 			</main>
-		</div>
+		</>
 	)
 }
 
