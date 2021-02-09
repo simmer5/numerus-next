@@ -36,21 +36,19 @@ const useStyles = makeStyles({
 export default function Home() {
 	const classes = useStyles()
 	return (
-		<div className={styles.container}>
-			<main className={styles.main}>
-				<Zoom in={true}>
-					<Box className={classes.contentContainer}>
-						<Logo width='25vw' />
-						<Container style={{ margin: '1rem' }}>
-							<CoolDivider />
-						</Container>
+		<main className={styles.main}>
+			<Zoom in={true}>
+				<Box className={classes.contentContainer}>
+					<Logo width='25vw' />
+					<Container style={{ margin: '1rem' }}>
+						<CoolDivider />
+					</Container>
 
-						<Typography align='center' className={classes.typo}>
-							Regnskapstjenester for stotre og melomstore bedrifter
-						</Typography>
-					</Box>
-				</Zoom>
-			</main>
-		</div>
+					<Typography align='center' className={classes.typo}>
+						Regnskapstjenester for stotre og melomstore bedrifter
+					</Typography>
+				</Box>
+			</Zoom>
+		</main>
 	)
 }

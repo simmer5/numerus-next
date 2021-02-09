@@ -2,7 +2,7 @@ import React from 'react'
 
 const CoolDivider = () => {
 	return (
-		<div
+		<figure
 			style={{
 				height: '2px',
 				// width: '80vw',
@@ -11,7 +11,7 @@ const CoolDivider = () => {
 				backgroundImage:
 					'linear-gradient(90deg, hsla(0, 0%, 100%, 0) 10%, #fff 50%, hsla(0, 0%, 100%, 0) 90%)',
 			}}
-		></div>
+		></figure>
 	)
 }
 

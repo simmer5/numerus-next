@@ -45,7 +45,7 @@ const TjenesterBtn = ({ title, tjenesterTitle, description }) => {
 	}
 	return (
 		<>
-			<div className={styles.btn} onClick={handleOpen}>
+			<div className={styles.btn} onClick={handleOpen} >
 				<span className={styles.noselect}>{title}</span>
 			</div>
 			<Modal className={classes.modal} open={open} onClose={handleClose}>

@@ -13,15 +13,29 @@ import CoolDivider from '../components/CoolDivider'
 
 function MyApp({ Component, pageProps }) {
 	const [width, setWidth] = useState('')
+	const [height, setHeight] = useState(`undefined`)
 	const breakpoint = 720
+	useEffect(() => {
+		if (height === `undefined`) {
+			setHeight(window.innerHeight)
+		}
+	}, [height])
+
+	useEffect(() => {
+		const handleWindowHeight = () => setHeight(window.innerHeight)
+		window.addEventListener('resize', handleWindowHeight)
+		return () => window.removeEventListener('resize', handleWindowHeight)
+	}, [])
+
 	useEffect(() => {
 		setWidth(window.innerWidth)
 		const handleWindowResize = () => setWidth(window.innerWidth)
 		window.addEventListener('resize', handleWindowResize)
 		return () => window.removeEventListener('resize', handleWindowResize)
 	}, [])
+
 	return (
-		<>
+		<div style={{ height: `${height}px`, backgroundColor: ' rgb(0, 0, 0)' }}>
 			<Head>
 				<title>Numerusfinans | Regnskapstjenester</title>
 				<meta
@@ -31,7 +45,7 @@ function MyApp({ Component, pageProps }) {
 			</Head>
 			<ThemeProvider theme={theme}>
 				<CssBaseline />
-				<div
+				<figure
 					style={{ position: 'absolute', top: 0, left: 0, margin: '1.5rem' }}
 				>
 					<Link href='/'>
@@ -39,9 +53,9 @@ function MyApp({ Component, pageProps }) {
 							<Logo width={width > breakpoint ? '12vw' : '32vw'} />
 						</a>
 					</Link>
-				</div>
+				</figure>
 				<Component {...pageProps} />
-				<div
+				<footer
 					style={{
 						display: 'flex',
 						flexDirection: 'column',
@@ -63,9 +77,9 @@ function MyApp({ Component, pageProps }) {
 						<NavBtn btnText='Tjenester' link='tjenester' />
 						<NavBtn btnText='Kontakt' link='kontakter' />
 					</nav>
-				</div>
+				</footer>
 			</ThemeProvider>
-		</>
+		</div>
 	)
 }
 
