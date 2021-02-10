@@ -9,6 +9,21 @@ export default class MyDocument extends Document {
 			<Html lang='en'>
 				<Head>
 					{/* PWA primary color */}
+					<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+					<meta name='title' content='Numerus finans' />
+					<meta
+						name='description'
+						content='Regnskapstjenester for store og mellomstore bedrifter. Kontakt oss: post@numerusfinans.no'
+					/>
+					<meta
+						name='keywords'
+						content='regnskap, autorisert regnskapsfører,  apskaita norvegijoje, imones atidarymas norvegijoje, firma norvegijoje'
+					/>
+					<meta name='robots' content='index, follow' />
+
+					<meta name='author' content='MiSt' />
+					<meta name='og:title' content='Numerus finans' />
+					<meta name='og:description' content='Tryge regnskapstjenester.' />
 					<meta name='theme-color' content={theme.palette.primary.main} />
 					<link
 						rel='stylesheet'

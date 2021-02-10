@@ -14,6 +14,10 @@ const Tjenester = () => {
 			<Head>
 				<title>Tjenester | Numerus finans</title>
 				<link rel='icon' href='/fav.ico' />
+				<meta
+					name='description'
+					content='Våre tjenester. Regnskapsføring, løn, rådgivning.'
+				/>
 			</Head>
 			<main className={styles.main}>
 				<Zoom in={true}>

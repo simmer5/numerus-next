@@ -14,6 +14,10 @@ const Kontakter = () => {
 		<>
 			<Head>
 				<title>Kontak Oss | Numerus finans</title>
+				<meta
+					name='description'
+					content='Kontakt oss. epost: post@numerusfinans.no'
+				/>
 				<link rel='icon' href='/fav.ico' />
 			</Head>
 			<main className={styles.main}>
