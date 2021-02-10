@@ -45,7 +45,7 @@ export default function Home() {
 					</Container>
 
 					<Typography align='center' className={classes.typo}>
-						Regnskapstjenester for stotre og melomstore bedrifter
+						Regnskapstjenester for store og melomstore bedrifter
 					</Typography>
 				</Box>
 			</Zoom>
