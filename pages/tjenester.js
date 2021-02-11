@@ -3,12 +3,17 @@ import Head from 'next/head'
 import styles from '../styles/Tjenester.module.css'
 import Box from '@material-ui/core/Box'
 import Grid from '@material-ui/core/Grid'
-
+import { makeStyles } from '@material-ui/core/styles'
 import Zoom from '@material-ui/core/Zoom'
 
 import TjenesterBtn from '../components/TjenesterBtn'
-
+const useStyles = makeStyles({
+	item: {
+		margin: '4px',
+	},
+})
 const Tjenester = () => {
+	const classes = useStyles()
 	return (
 		<>
 			<Head>
@@ -22,15 +27,9 @@ const Tjenester = () => {
 			<main className={styles.main}>
 				<Zoom in={true}>
 					<Box xs={10}>
-						<Grid
-							container
-							spacing={2}
-							alignItems='center'
-							justify='center'
-							wrap='wrap'
-						>
+						<Grid container alignItems='center' justify='center' wrap='wrap'>
 							{/* Line 1 */}
-							<Grid item>
+							<Grid item className={classes.item}>
 								<TjenesterBtn
 									title='Regnskapsføring'
 									tjenesterTitle='Regnskapsføring'
@@ -40,7 +39,7 @@ const Tjenester = () => {
 
 							{/* Line 2 */}
 
-							<Grid item>
+							<Grid item className={classes.item}>
 								<TjenesterBtn
 									title='Lønn'
 									tjenesterTitle='Lønn'
@@ -48,7 +47,7 @@ const Tjenester = () => {
 								/>
 							</Grid>
 							{/* Line 3 */}
-							<Grid item>
+							<Grid item className={classes.item}>
 								<TjenesterBtn
 									title='Årsoppgjør'
 									tjenesterTitle='Årsoppgjør'
@@ -58,7 +57,7 @@ const Tjenester = () => {
 
 							{/* Line 4 */}
 
-							<Grid item>
+							<Grid item className={classes.item}>
 								<TjenesterBtn
 									title='Rådgivning'
 									tjenesterTitle='Rådgivning'
