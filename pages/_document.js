@@ -9,6 +9,10 @@ export default class MyDocument extends Document {
 			<Html lang='en'>
 				<Head>
 					{/* PWA primary color */}
+					<meta
+						name='google-site-verification'
+						content='mGcv_av9jhEaPKBo128Fr47SC4anM2-_aj5U5LebCf0'
+					/>
 					<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
 					<meta name='title' content='Numerus finans' />
 					<meta
