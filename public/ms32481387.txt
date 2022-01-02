@@ -1,0 +1,5 @@
+﻿{
+  "Description": "Domain ownership verification file for Microsoft 365 - place in the website root",
+  "Domain": "numerusfinans.no",
+  "Id": "4d60f52a-8220-4655-869a-89bfe408537c"
+}
